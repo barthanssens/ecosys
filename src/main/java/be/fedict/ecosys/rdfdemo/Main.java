@@ -85,13 +85,6 @@ public class Main {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        
-        // Turtle
-        try(OutputStream out = Files.newOutputStream(Paths.get(OUT_META_TTL))) { 
-            RDFDataMgr.write(out, m, Lang.TURTLE);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
     }
     
     public static void main(String[] args) {

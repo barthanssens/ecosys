@@ -1,16 +1,16 @@
 <http://data.fedict.be/org/helpdesk> <http://www.w3.org/2001/vcard-rdf/3.0#EMAIL> <mailto:servicedesk@fedict.be> .
 <http://data.fedict.be/org/helpdesk> <http://www.w3.org/2001/vcard-rdf/3.0#TEL> <tel:+3222129600> .
-<http://data.fedict.be/org/helpdesk> <http://www.w3.org/2001/vcard-rdf/3.0#FN> "Helpdesk"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://data.fedict.be/org/helpdesk> <http://www.w3.org/2001/vcard-rdf/3.0#FN> "Helpdesk" .
 <http://data.fedict.be/org/helpdesk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2001/vcard-rdf/3.0#ORG> .
 <http://data.fedict.be/org/pga> <http://www.w3.org/2001/vcard-rdf/3.0#EMAIL> <mailto:info@fedict.be> .
-<http://data.fedict.be/org/pga> <http://www.w3.org/2001/vcard-rdf/3.0#FN> "PGA"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://data.fedict.be/org/pga> <http://www.w3.org/2001/vcard-rdf/3.0#FN> "PGA" .
 <http://data.fedict.be/org/pga> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2001/vcard-rdf/3.0#ORG> .
 <http://www.belgium.be/form/ECOPOC01> <http://www.w3.org/ns/dcat#contactPoint> <http://data.fedict.be/org/pga> .
 <http://www.belgium.be/form/ECOPOC01> <http://www.w3.org/ns/dcat#contactPoint> <http://data.fedict.be/org/helpdesk> .
 <http://www.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/spatial> <hhttp://nuts.geovocab.org/id/BE> .
 <http://www.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/modified> "2015-11-19"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://www.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/created> "2012-10-14"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://www.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/description> "Description"@fr^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
-<http://www.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/description> "Beschrijving"@nl^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
-<http://www.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/title> "Formulaire intelligent"@fr^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
-<http://www.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/title> "Intelligent formulier"@nl^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+<http://www.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/description> "Description"@fr .
+<http://www.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/description> "Beschrijving"@nl .
+<http://www.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/title> "Formulaire intelligent"@fr .
+<http://www.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/title> "Intelligent formulier"@nl .
