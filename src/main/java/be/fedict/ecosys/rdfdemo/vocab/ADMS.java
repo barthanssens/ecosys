@@ -5,7 +5,6 @@
  */
 package be.fedict.ecosys.rdfdemo.vocab;
 
-import static be.fedict.ecosys.rdfdemo.vocab.DCAT.NS;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
@@ -17,7 +16,8 @@ import org.apache.jena.rdf.model.Resource;
  * @author Bart Hanssens <bart.hanssens@fedict.be>
  */
 public class ADMS {
-private static final Model M= ModelFactory.createDefaultModel();
+    
+    private static final Model M = ModelFactory.createDefaultModel();
     public static final String NS = "http://www.w3.org/ns/adms#";
     
     public static String getURI() {return NS;}
