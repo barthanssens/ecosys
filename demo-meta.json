@@ -1,8 +1,43 @@
 {
   "@graph" : [ {
+    "@id" : "http://data.belgium.be/form/ECOPOC01",
+    "created" : "2012-10-14",
+    "dcterms:description" : [ {
+      "@language" : "fr",
+      "@value" : "Description longue"
+    }, {
+      "@language" : "nl",
+      "@value" : "Langere beschrijving"
+    } ],
+    "hasVersion" : [ "http://data.belgium.be/form/ECOPOC01/nl", "http://data.belgium.be/form/ECOPOC01/fr" ],
+    "language" : [ "http://publications.europa.eu/resource/authority/language/NLD", "http://publications.europa.eu/resource/authority/language/FRA" ],
+    "modified" : "2015-11-19",
+    "publisher" : "https://opencorporates.com/id/companies/be/0367302178",
+    "spatial" : "http://nuts.geovocab.org/id/BE",
+    "dcterms:title" : [ {
+      "@language" : "nl",
+      "@value" : "Intelligent formulier"
+    }, {
+      "@language" : "fr",
+      "@value" : "Formulaire intelligent"
+    } ],
+    "type" : "http://purl.org/dc/dcmitype/InteractiveResource",
+    "contactPoint" : [ "http://data.fedict.be/org/helpdesk", "http://data.fedict.be/org/pga" ]
+  }, {
+    "@id" : "http://data.belgium.be/form/ECOPOC01/fr",
+    "isVersionOf" : "http://data.belgium.be/form/ECOPOC01",
+    "language" : "http://publications.europa.eu/resource/authority/language/FRA",
+    "http://xmlns.com/foaf/0.1/page" : "http://www.belgium.be/form/contact/fr/"
+  }, {
+    "@id" : "http://data.belgium.be/form/ECOPOC01/nl",
+    "isVersionOf" : "http://data.belgium.be/form/ECOPOC01",
+    "language" : "http://publications.europa.eu/resource/authority/language/NLD",
+    "http://xmlns.com/foaf/0.1/page" : "http://www.belgium.be/form/contact/nl/"
+  }, {
     "@id" : "http://data.fedict.be/org/helpdesk",
     "@type" : "vcard:ORG",
     "language" : "http://publications.europa.eu/resource/authority/language/NLD",
+    "subject" : "http://publications.europa.eu/resource/authority/data-theme/AGRI",
     "EMAIL" : "mailto:servicedesk@fedict.be",
     "vcard:FN" : [ {
       "@language" : "fr",
@@ -11,37 +46,56 @@
       "@language" : "nl",
       "@value" : "Nederlandse helpdesk"
     } ],
+    "vcard:ROLE" : "Technical",
     "TEL" : "tel:+3222129600"
   }, {
     "@id" : "http://data.fedict.be/org/pga",
     "@type" : "vcard:ORG",
-    "EMAIL" : "mailto:info@fedict.be",
-    "vcard:FN" : "PGA"
-  }, {
-    "@id" : "http://www.belgium.be/form/ECOPOC01",
-    "created" : "2012-10-14",
-    "dcterms:description" : [ {
-      "@language" : "nl",
-      "@value" : "Langere beschrijving"
-    }, {
-      "@language" : "fr",
-      "@value" : "Description"
-    } ],
     "language" : [ "http://publications.europa.eu/resource/authority/language/FRA", "http://publications.europa.eu/resource/authority/language/NLD" ],
-    "modified" : "2015-11-19",
-    "spatial" : "http://nuts.geovocab.org/id/BE",
-    "dcterms:title" : [ {
-      "@language" : "fr",
-      "@value" : "Formulaire intelligent"
-    }, {
-      "@language" : "nl",
-      "@value" : "Intelligent formulier"
-    } ],
-    "contactPoint" : [ "http://data.fedict.be/org/helpdesk", "http://data.fedict.be/org/pga" ]
+    "EMAIL" : "mailto:pga@fedict.be",
+    "vcard:FN" : "PGA",
+    "vcard:ROLE" : "Business",
+    "TEL" : "tel:+3222129601"
   } ],
   "@context" : {
+    "hasVersion" : {
+      "@id" : "http://purl.org/dc/terms/hasVersion",
+      "@type" : "@id"
+    },
+    "contactPoint" : {
+      "@id" : "http://www.w3.org/ns/dcat#contactPoint",
+      "@type" : "@id"
+    },
     "language" : {
       "@id" : "http://purl.org/dc/terms/language",
+      "@type" : "@id"
+    },
+    "spatial" : {
+      "@id" : "http://purl.org/dc/terms/spatial",
+      "@type" : "@id"
+    },
+    "publisher" : {
+      "@id" : "http://purl.org/dc/terms/publisher",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "modified" : {
+      "@id" : "http://purl.org/dc/terms/modified",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "created" : {
+      "@id" : "http://purl.org/dc/terms/created",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "type" : {
+      "@id" : "http://purl.org/dc/terms/type",
       "@type" : "@id"
     },
     "EMAIL" : {
@@ -52,34 +106,27 @@
       "@id" : "http://www.w3.org/2001/vcard-rdf/3.0#TEL",
       "@type" : "@id"
     },
+    "ROLE" : {
+      "@id" : "http://www.w3.org/2001/vcard-rdf/3.0#ROLE",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
     "FN" : {
       "@id" : "http://www.w3.org/2001/vcard-rdf/3.0#FN",
-      "@type" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
-    "contactPoint" : {
-      "@id" : "http://www.w3.org/ns/dcat#contactPoint",
+    "subject" : {
+      "@id" : "http://purl.org/dc/terms/subject",
       "@type" : "@id"
     },
-    "title" : {
-      "@id" : "http://purl.org/dc/terms/title",
-      "@type" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    "page" : {
+      "@id" : "http://xmlns.com/foaf/0.1/page",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
-    "description" : {
-      "@id" : "http://purl.org/dc/terms/description",
-      "@type" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
-    "spatial" : {
-      "@id" : "http://purl.org/dc/terms/spatial",
+    "isVersionOf" : {
+      "@id" : "http://purl.org/dc/terms/isVersionOf",
       "@type" : "@id"
     },
-    "modified" : {
-      "@id" : "http://purl.org/dc/terms/modified",
-      "@type" : "http://www.w3.org/2001/XMLSchema#date"
-    },
-    "created" : {
-      "@id" : "http://purl.org/dc/terms/created",
-      "@type" : "http://www.w3.org/2001/XMLSchema#date"
-    },
+    "adms" : "http://www.w3.org/ns/adms#",
     "dcterms" : "http://purl.org/dc/terms/",
     "vcard" : "http://www.w3.org/2001/vcard-rdf/3.0#",
     "dcat" : "http://www.w3.org/ns/dcat#"
