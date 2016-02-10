@@ -3,11 +3,11 @@
     "@id" : "http://data.belgium.be/form/ECOPOC01",
     "created" : "2012-10-14",
     "dcterms:description" : [ {
-      "@language" : "fr",
-      "@value" : "Description longue"
-    }, {
       "@language" : "nl",
-      "@value" : "Langere beschrijving"
+      "@value" : "Via deze online toepassing kunnen organisatoren een duurzaamheidsscore berekenen voor een gepland evenement"
+    }, {
+      "@language" : "fr",
+      "@value" : "Cette application permets aux organisateurs d'evenement de calculer un index de durabilité pour un événement planifié"
     } ],
     "hasVersion" : [ "http://data.belgium.be/form/ECOPOC01/nl", "http://data.belgium.be/form/ECOPOC01/fr" ],
     "language" : [ "http://publications.europa.eu/resource/authority/language/NLD", "http://publications.europa.eu/resource/authority/language/FRA" ],
@@ -22,22 +22,22 @@
       "@value" : "Formulaire intelligent"
     } ],
     "type" : "http://purl.org/dc/dcmitype/InteractiveResource",
-    "contactPoint" : [ "http://data.fedict.be/org/helpdesk", "http://data.fedict.be/org/pga" ]
+    "contactPoint" : [ "http://data.kanselarij.belgium.be/contact/ifdd", "http://data.fedict.be/contact/helpdesk" ]
   }, {
     "@id" : "http://data.belgium.be/form/ECOPOC01/fr",
     "isVersionOf" : "http://data.belgium.be/form/ECOPOC01",
     "language" : "http://publications.europa.eu/resource/authority/language/FRA",
-    "http://xmlns.com/foaf/0.1/page" : "http://www.belgium.be/form/contact/fr/"
+    "http://xmlns.com/foaf/0.1/page" : "http://www.belgium.be/form/environnement/fr/"
   }, {
     "@id" : "http://data.belgium.be/form/ECOPOC01/nl",
     "isVersionOf" : "http://data.belgium.be/form/ECOPOC01",
     "language" : "http://publications.europa.eu/resource/authority/language/NLD",
-    "http://xmlns.com/foaf/0.1/page" : "http://www.belgium.be/form/contact/nl/"
+    "http://xmlns.com/foaf/0.1/page" : "http://www.belgium.be/form/milieu/nl/"
   }, {
-    "@id" : "http://data.fedict.be/org/helpdesk",
+    "@id" : "http://data.fedict.be/contact/helpdesk",
     "@type" : "vcard:ORG",
     "language" : "http://publications.europa.eu/resource/authority/language/NLD",
-    "subject" : "http://publications.europa.eu/resource/authority/data-theme/AGRI",
+    "subject" : "http://publications.europa.eu/resource/authority/data-theme/ENVI",
     "EMAIL" : "mailto:servicedesk@fedict.be",
     "vcard:FN" : [ {
       "@language" : "fr",
@@ -49,15 +49,19 @@
     "vcard:ROLE" : "Technical",
     "TEL" : "tel:+3222129600"
   }, {
-    "@id" : "http://data.fedict.be/org/pga",
+    "@id" : "http://data.kanselarij.belgium.be/contact/ifdd",
     "@type" : "vcard:ORG",
     "language" : [ "http://publications.europa.eu/resource/authority/language/FRA", "http://publications.europa.eu/resource/authority/language/NLD" ],
-    "EMAIL" : "mailto:pga@fedict.be",
-    "vcard:FN" : "PGA",
+    "EMAIL" : "mailto:contact@ifdd.fed.be",
+    "vcard:FN" : "IFDD",
     "vcard:ROLE" : "Business",
-    "TEL" : "tel:+3222129601"
+    "TEL" : "tel:+3225010462"
   } ],
   "@context" : {
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
     "hasVersion" : {
       "@id" : "http://purl.org/dc/terms/hasVersion",
       "@type" : "@id"
@@ -78,10 +82,6 @@
       "@id" : "http://purl.org/dc/terms/publisher",
       "@type" : "@id"
     },
-    "description" : {
-      "@id" : "http://purl.org/dc/terms/description",
-      "@type" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
     "title" : {
       "@id" : "http://purl.org/dc/terms/title",
       "@type" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
@@ -98,6 +98,10 @@
       "@id" : "http://purl.org/dc/terms/type",
       "@type" : "@id"
     },
+    "subject" : {
+      "@id" : "http://purl.org/dc/terms/subject",
+      "@type" : "@id"
+    },
     "EMAIL" : {
       "@id" : "http://www.w3.org/2001/vcard-rdf/3.0#EMAIL",
       "@type" : "@id"
@@ -112,11 +116,7 @@
     },
     "FN" : {
       "@id" : "http://www.w3.org/2001/vcard-rdf/3.0#FN",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "subject" : {
-      "@id" : "http://purl.org/dc/terms/subject",
-      "@type" : "@id"
+      "@type" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
     "page" : {
       "@id" : "http://xmlns.com/foaf/0.1/page",

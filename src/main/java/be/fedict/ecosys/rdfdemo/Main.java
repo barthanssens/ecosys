@@ -32,28 +32,37 @@ import org.apache.jena.vocabulary.VCARD;
  * @author Bart Hanssens <bart.hanssens@fedict.be>
  */
 public class Main {
+    // Output formats / RDF serializations
     private final static String OUT_META_NT = "demo-meta.nt";
     private final static String OUT_META_TTL = "demo-meta.ttl";
     private final static String OUT_META_JSON = "demo-meta.json";
         
-    // Some contstants
-    private final static String BELGIUM = "http://data.belgium.be";
-    private final static String FEDICT = "http://data.fedict.be";
-    private final static String EU_PO = "http://publications.europa.eu/resource/authority";
+    // Some contstants,(parts of) identifiers for various things
+    private final static String ID_BELGIUM = "http://data.belgium.be";
+    private final static String ID_FEDICT = "http://data.fedict.be";
+    private final static String ID_PRIMEM = "http://data.kanselarij.belgium.be";
+    private final static String ID_PO = "http://publications.europa.eu/resource/authority";
+    private final static String ID_CORP = "https://opencorporates.com/id/companies";
 
+    // Location of the portal
+    private final static String PORTAL = "http://www.belgium.be";
+    
+    
     /**
-     * Save RDF model / triples to equivalent files in different file formats
+     * Save RDF model / triples to equivalent files in different file formats.
      * 
      * @param m RDF form
      * @throws IOException 
      */
     private static void save(Model m) throws IOException {
-        // Shorter notation for formats supporting it
+        // Shorter notations for formats supporting it
         m.setNsPrefix("adms", ADMS.getURI());
         m.setNsPrefix("dcat", DCAT.getURI());
         m.setNsPrefix("dcterms", DCTerms.getURI());
         //m.setNsPrefix("oh", OH.getURI());
         m.setNsPrefix("vcard", VCARD.getURI());
+        
+        // Note: All output formats represent exactly the same RDF info
         
         // N-Triples format, extremely simple but very verbose
         OutputStream nt = Files.newOutputStream(Paths.get(OUT_META_NT));
@@ -76,30 +85,36 @@ public class Main {
      * Generate demo RDF metadata file.
      */
     private static void generateMetadataFile() {
+        // Note: there is no "order" in the output
+        // i.e. the info added to the model, can end up anywhere in the output,
+        // regardless the order of the code below
+        
         Model m = ModelFactory.createDefaultModel();
         
-        // Eurostat identifier for geographical area "Belgium"
+        // Eurostat identifier for "Belgium"
         Resource belgium = m.createResource("http://nuts.geovocab.org/id/BE");
         
         // EU Publication Office identifiers for NL / FR
-        Resource dutch = m.createResource(EU_PO + "/language/NLD");
-        Resource french = m.createResource(EU_PO + "/language/FRA");
+        Resource dutch = m.createResource(ID_PO + "/language/NLD");
+        Resource french = m.createResource(ID_PO + "/language/FRA");
         
         // EU Publication Office identifiers for theme / category
-        Resource agri = m.createResource(EU_PO + "/data-theme/AGRI");
+        Resource envi = m.createResource(ID_PO + "/data-theme/ENVI");
         
-        // Open Corporates identifier for "Fedict"
-        Resource fedict = m.createResource("https://opencorporates.com/id/companies/be/0367302178");
+        // Open Corporates identifier for "Fedict" and "Chancellerie"
+        // Improvement: BCE should be available als linked open data 
+        Resource fedict = m.createResource(ID_CORP + "/be/0367302178");
+        Resource primem = m.createResource(ID_CORP + "/be/0308357951");
         
-        
-        Resource form = m.createResource(BELGIUM + "/form/ECOPOC01");
-        Resource form_nl = m.createResource(BELGIUM + "/form/ECOPOC01/nl");
-        Resource form_fr = m.createResource(BELGIUM + "/form/ECOPOC01/fr");
+        Resource form = m.createResource(ID_BELGIUM + "/form/ECOPOC01");
+        // Language variants
+        Resource form_nl = m.createResource(ID_BELGIUM + "/form/ECOPOC01/nl");
+        Resource form_fr = m.createResource(ID_BELGIUM + "/form/ECOPOC01/fr");
         
         form.addProperty(DCTerms.title, "Intelligent formulier", "nl")
             .addProperty(DCTerms.title, "Formulaire intelligent", "fr")
-            .addProperty(DCTerms.description, "Langere beschrijving", "nl")
-            .addProperty(DCTerms.description, "Description longue", "fr")
+            .addProperty(DCTerms.description, "Via deze online toepassing kunnen organisatoren een duurzaamheidsscore berekenen voor een gepland evenement", "nl")
+            .addProperty(DCTerms.description, "Cette application permets aux organisateurs d'evenement de calculer un index de durabilité pour un événement planifié", "fr")
             .addProperty(DCTerms.created, "2012-10-14", XSDDatatype.XSDdate)
             .addProperty(DCTerms.modified, "2015-11-19", XSDDatatype.XSDdate)
             .addProperty(DCTerms.type, DCTypes.InteractiveResource)
@@ -111,15 +126,16 @@ public class Main {
             .addProperty(DCTerms.hasVersion, form_fr);
         
         form_nl.addProperty(DCTerms.isVersionOf, form)
-            .addProperty(FOAF.page, "http://www.belgium.be/form/contact/nl/")
+            .addProperty(FOAF.page, PORTAL + "/form/milieu/nl/")
             .addProperty(DCTerms.language, dutch);
         
         form_fr.addProperty(DCTerms.isVersionOf, form)
-            .addProperty(FOAF.page, "http://www.belgium.be/form/contact/fr/")
+            .addProperty(FOAF.page, PORTAL + "/form/environnement/fr/")
             .addProperty(DCTerms.language, french);
         
         // Define the helpdesk contact
-        Resource tech = m.createResource(FEDICT + "/org/helpdesk");
+        // Note: a contact of an organization is not the organization itself
+        Resource tech = m.createResource(ID_FEDICT + "/contact/helpdesk");
         Resource mailtech = m.createResource("mailto:servicedesk@fedict.be");
         Resource teltech = m.createResource("tel:+3222129600");
         tech.addProperty(RDF.type, VCARD.ORG)
@@ -128,16 +144,16 @@ public class Main {
             .addProperty(VCARD.ROLE, "Technical")
             .addProperty(VCARD.TEL, teltech)
             .addProperty(VCARD.EMAIL, mailtech)
-            .addProperty(DCTerms.subject, agri)
+            .addProperty(DCTerms.subject, envi)
             .addProperty(DCTerms.language, dutch);
         form.addProperty(DCAT.contactPoint, tech);
         
         // Business contact
-        Resource bizz = m.createResource(FEDICT + "/org/pga");
-        Resource mailbiz = m.createResource("mailto:pga@fedict.be");
-        Resource telbiz = m.createResource("tel:+3222129601");
+        Resource bizz = m.createResource(ID_PRIMEM + "/contact/ifdd");
+        Resource mailbiz = m.createResource("mailto:contact@ifdd.fed.be");
+        Resource telbiz = m.createResource("tel:+3225010462");
         bizz.addProperty(RDF.type, VCARD.ORG)
-            .addProperty(VCARD.FN, "PGA")
+            .addProperty(VCARD.FN, "IFDD")
             .addProperty(VCARD.ROLE, "Business")
             .addProperty(VCARD.TEL, telbiz)
             .addProperty(VCARD.EMAIL, mailbiz)

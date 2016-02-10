@@ -5,7 +5,7 @@
 
 <http://data.belgium.be/form/ECOPOC01>
         dcterms:created      "2012-10-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
-        dcterms:description  "Description longue"@fr , "Langere beschrijving"@nl ;
+        dcterms:description  "Via deze online toepassing kunnen organisatoren een duurzaamheidsscore berekenen voor een gepland evenement"@nl , "Cette application permets aux organisateurs d'evenement de calculer un index de durabilité pour un événement planifié"@fr ;
         dcterms:hasVersion   <http://data.belgium.be/form/ECOPOC01/nl> , <http://data.belgium.be/form/ECOPOC01/fr> ;
         dcterms:language     <http://publications.europa.eu/resource/authority/language/NLD> , <http://publications.europa.eu/resource/authority/language/FRA> ;
         dcterms:modified     "2015-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
@@ -13,20 +13,12 @@
         dcterms:spatial      <http://nuts.geovocab.org/id/BE> ;
         dcterms:title        "Intelligent formulier"@nl , "Formulaire intelligent"@fr ;
         dcterms:type         <http://purl.org/dc/dcmitype/InteractiveResource> ;
-        dcat:contactPoint    <http://data.fedict.be/org/helpdesk> , <http://data.fedict.be/org/pga> .
+        dcat:contactPoint    <http://data.kanselarij.belgium.be/contact/ifdd> , <http://data.fedict.be/contact/helpdesk> .
 
-<http://data.fedict.be/org/pga>
-        a                 vcard:ORG ;
-        dcterms:language  <http://publications.europa.eu/resource/authority/language/FRA> , <http://publications.europa.eu/resource/authority/language/NLD> ;
-        vcard:EMAIL       <mailto:pga@fedict.be> ;
-        vcard:FN          "PGA" ;
-        vcard:ROLE        "Business" ;
-        vcard:TEL         <tel:+3222129601> .
-
-<http://data.fedict.be/org/helpdesk>
+<http://data.fedict.be/contact/helpdesk>
         a                 vcard:ORG ;
         dcterms:language  <http://publications.europa.eu/resource/authority/language/NLD> ;
-        dcterms:subject   <http://publications.europa.eu/resource/authority/data-theme/AGRI> ;
+        dcterms:subject   <http://publications.europa.eu/resource/authority/data-theme/ENVI> ;
         vcard:EMAIL       <mailto:servicedesk@fedict.be> ;
         vcard:FN          "Helpdesk néerlandophone"@fr , "Nederlandse helpdesk"@nl ;
         vcard:ROLE        "Technical" ;
@@ -36,10 +28,18 @@
         dcterms:isVersionOf  <http://data.belgium.be/form/ECOPOC01> ;
         dcterms:language     <http://publications.europa.eu/resource/authority/language/FRA> ;
         <http://xmlns.com/foaf/0.1/page>
-                "http://www.belgium.be/form/contact/fr/" .
+                "http://www.belgium.be/form/environnement/fr/" .
+
+<http://data.kanselarij.belgium.be/contact/ifdd>
+        a                 vcard:ORG ;
+        dcterms:language  <http://publications.europa.eu/resource/authority/language/FRA> , <http://publications.europa.eu/resource/authority/language/NLD> ;
+        vcard:EMAIL       <mailto:contact@ifdd.fed.be> ;
+        vcard:FN          "IFDD" ;
+        vcard:ROLE        "Business" ;
+        vcard:TEL         <tel:+3225010462> .
 
 <http://data.belgium.be/form/ECOPOC01/nl>
         dcterms:isVersionOf  <http://data.belgium.be/form/ECOPOC01> ;
         dcterms:language     <http://publications.europa.eu/resource/authority/language/NLD> ;
         <http://xmlns.com/foaf/0.1/page>
-                "http://www.belgium.be/form/contact/nl/" .
+                "http://www.belgium.be/form/milieu/nl/" .
