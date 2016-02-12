@@ -1,4 +1,5 @@
 @prefix adms:  <http://www.w3.org/ns/adms#> .
+@prefix rov:   <http://www.w3.org/ns/regorg#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix vcard: <http://www.w3.org/2001/vcard-rdf/3.0#> .
 @prefix dcat:  <http://www.w3.org/ns/dcat#> .
@@ -9,16 +10,22 @@
         dcterms:hasVersion   <http://data.belgium.be/form/ECOPOC01/nl> , <http://data.belgium.be/form/ECOPOC01/fr> ;
         dcterms:language     <http://publications.europa.eu/resource/authority/language/NLD> , <http://publications.europa.eu/resource/authority/language/FRA> ;
         dcterms:modified     "2015-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
-        dcterms:publisher    <https://opencorporates.com/id/companies/be/0367302178> ;
+        dcterms:publisher    <https://opencorporates.com/id/companies/be/0308357951> ;
         dcterms:spatial      <http://nuts.geovocab.org/id/BE> ;
+        dcterms:subject      <http://publications.europa.eu/resource/authority/data-theme/ENVI> ;
         dcterms:title        "Intelligent formulier"@nl , "Formulaire intelligent"@fr ;
         dcterms:type         <http://purl.org/dc/dcmitype/InteractiveResource> ;
         dcat:contactPoint    <http://data.kanselarij.belgium.be/contact/ifdd> , <http://data.fedict.be/contact/helpdesk> .
 
+<https://opencorporates.com/id/companies/be/0308357951>
+        a              rov:RegisteredOrganization ;
+        <http://www.w3.org/2004/02/skos/core#altLabel>
+                "FOD Kanselarij"@nl , "SPF Chancellerie"@fr ;
+        rov:legalName  "Federale Overheidsdienst Kanselarij van de Eerste Minister"@nl , "Service Public Fédéral Chancellerie du Premier Ministre"@fr .
+
 <http://data.fedict.be/contact/helpdesk>
         a                 vcard:ORG ;
         dcterms:language  <http://publications.europa.eu/resource/authority/language/NLD> ;
-        dcterms:subject   <http://publications.europa.eu/resource/authority/data-theme/ENVI> ;
         vcard:EMAIL       <mailto:servicedesk@fedict.be> ;
         vcard:FN          "Helpdesk néerlandophone"@fr , "Nederlandse helpdesk"@nl ;
         vcard:ROLE        "Technical" ;

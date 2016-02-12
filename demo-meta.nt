@@ -2,9 +2,10 @@
 <http://data.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/hasVersion> <http://data.belgium.be/form/ECOPOC01/nl> .
 <http://data.belgium.be/form/ECOPOC01> <http://www.w3.org/ns/dcat#contactPoint> <http://data.kanselarij.belgium.be/contact/ifdd> .
 <http://data.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/language> <http://publications.europa.eu/resource/authority/language/NLD> .
+<http://data.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/publisher> <https://opencorporates.com/id/companies/be/0308357951> .
 <http://data.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/spatial> <http://nuts.geovocab.org/id/BE> .
-<http://data.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/publisher> <https://opencorporates.com/id/companies/be/0367302178> .
 <http://data.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/title> "Intelligent formulier"@nl .
+<http://data.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/subject> <http://publications.europa.eu/resource/authority/data-theme/ENVI> .
 <http://data.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/hasVersion> <http://data.belgium.be/form/ECOPOC01/fr> .
 <http://data.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/modified> "2015-11-19"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://data.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/created> "2012-10-14"^^<http://www.w3.org/2001/XMLSchema#date> .
@@ -13,8 +14,12 @@
 <http://data.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/language> <http://publications.europa.eu/resource/authority/language/FRA> .
 <http://data.belgium.be/form/ECOPOC01> <http://www.w3.org/ns/dcat#contactPoint> <http://data.fedict.be/contact/helpdesk> .
 <http://data.belgium.be/form/ECOPOC01> <http://purl.org/dc/terms/description> "Cette application permets aux organisateurs d'evenement de calculer un index de durabilité pour un événement planifié"@fr .
+<https://opencorporates.com/id/companies/be/0308357951> <http://www.w3.org/2004/02/skos/core#altLabel> "FOD Kanselarij"@nl .
+<https://opencorporates.com/id/companies/be/0308357951> <http://www.w3.org/ns/regorg#legalName> "Federale Overheidsdienst Kanselarij van de Eerste Minister"@nl .
+<https://opencorporates.com/id/companies/be/0308357951> <http://www.w3.org/2004/02/skos/core#altLabel> "SPF Chancellerie"@fr .
+<https://opencorporates.com/id/companies/be/0308357951> <http://www.w3.org/ns/regorg#legalName> "Service Public Fédéral Chancellerie du Premier Ministre"@fr .
+<https://opencorporates.com/id/companies/be/0308357951> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/regorg#RegisteredOrganization> .
 <http://data.fedict.be/contact/helpdesk> <http://purl.org/dc/terms/language> <http://publications.europa.eu/resource/authority/language/NLD> .
-<http://data.fedict.be/contact/helpdesk> <http://purl.org/dc/terms/subject> <http://publications.europa.eu/resource/authority/data-theme/ENVI> .
 <http://data.fedict.be/contact/helpdesk> <http://www.w3.org/2001/vcard-rdf/3.0#EMAIL> <mailto:servicedesk@fedict.be> .
 <http://data.fedict.be/contact/helpdesk> <http://www.w3.org/2001/vcard-rdf/3.0#TEL> <tel:+3222129600> .
 <http://data.fedict.be/contact/helpdesk> <http://www.w3.org/2001/vcard-rdf/3.0#ROLE> "Technical" .

@@ -12,8 +12,9 @@
     "hasVersion" : [ "http://data.belgium.be/form/ECOPOC01/nl", "http://data.belgium.be/form/ECOPOC01/fr" ],
     "language" : [ "http://publications.europa.eu/resource/authority/language/NLD", "http://publications.europa.eu/resource/authority/language/FRA" ],
     "modified" : "2015-11-19",
-    "publisher" : "https://opencorporates.com/id/companies/be/0367302178",
+    "publisher" : "https://opencorporates.com/id/companies/be/0308357951",
     "spatial" : "http://nuts.geovocab.org/id/BE",
+    "subject" : "http://publications.europa.eu/resource/authority/data-theme/ENVI",
     "dcterms:title" : [ {
       "@language" : "nl",
       "@value" : "Intelligent formulier"
@@ -37,7 +38,6 @@
     "@id" : "http://data.fedict.be/contact/helpdesk",
     "@type" : "vcard:ORG",
     "language" : "http://publications.europa.eu/resource/authority/language/NLD",
-    "subject" : "http://publications.europa.eu/resource/authority/data-theme/ENVI",
     "EMAIL" : "mailto:servicedesk@fedict.be",
     "vcard:FN" : [ {
       "@language" : "fr",
@@ -56,6 +56,23 @@
     "vcard:FN" : "IFDD",
     "vcard:ROLE" : "Business",
     "TEL" : "tel:+3225010462"
+  }, {
+    "@id" : "https://opencorporates.com/id/companies/be/0308357951",
+    "@type" : "rov:RegisteredOrganization",
+    "http://www.w3.org/2004/02/skos/core#altLabel" : [ {
+      "@language" : "nl",
+      "@value" : "FOD Kanselarij"
+    }, {
+      "@language" : "fr",
+      "@value" : "SPF Chancellerie"
+    } ],
+    "rov:legalName" : [ {
+      "@language" : "nl",
+      "@value" : "Federale Overheidsdienst Kanselarij van de Eerste Minister"
+    }, {
+      "@language" : "fr",
+      "@value" : "Service Public Fédéral Chancellerie du Premier Ministre"
+    } ]
   } ],
   "@context" : {
     "description" : {
@@ -74,17 +91,21 @@
       "@id" : "http://purl.org/dc/terms/language",
       "@type" : "@id"
     },
-    "spatial" : {
-      "@id" : "http://purl.org/dc/terms/spatial",
-      "@type" : "@id"
-    },
     "publisher" : {
       "@id" : "http://purl.org/dc/terms/publisher",
+      "@type" : "@id"
+    },
+    "spatial" : {
+      "@id" : "http://purl.org/dc/terms/spatial",
       "@type" : "@id"
     },
     "title" : {
       "@id" : "http://purl.org/dc/terms/title",
       "@type" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "subject" : {
+      "@id" : "http://purl.org/dc/terms/subject",
+      "@type" : "@id"
     },
     "modified" : {
       "@id" : "http://purl.org/dc/terms/modified",
@@ -98,9 +119,13 @@
       "@id" : "http://purl.org/dc/terms/type",
       "@type" : "@id"
     },
-    "subject" : {
-      "@id" : "http://purl.org/dc/terms/subject",
-      "@type" : "@id"
+    "altLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#altLabel",
+      "@type" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "legalName" : {
+      "@id" : "http://www.w3.org/ns/regorg#legalName",
+      "@type" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
     "EMAIL" : {
       "@id" : "http://www.w3.org/2001/vcard-rdf/3.0#EMAIL",
@@ -127,6 +152,7 @@
       "@type" : "@id"
     },
     "adms" : "http://www.w3.org/ns/adms#",
+    "rov" : "http://www.w3.org/ns/regorg#",
     "dcterms" : "http://purl.org/dc/terms/",
     "vcard" : "http://www.w3.org/2001/vcard-rdf/3.0#",
     "dcat" : "http://www.w3.org/ns/dcat#"
