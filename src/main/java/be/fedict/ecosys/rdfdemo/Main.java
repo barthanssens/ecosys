@@ -62,6 +62,7 @@ public class Main {
         m.setNsPrefix("dcat", DCAT.getURI());
         m.setNsPrefix("dcterms", DCTerms.getURI());
         //m.setNsPrefix("oh", OH.getURI());
+        m.setNsPrefix("skos", SKOS.getURI());
         m.setNsPrefix("rov", REGORG.getURI());
         m.setNsPrefix("vcard", VCARD.getURI());
         

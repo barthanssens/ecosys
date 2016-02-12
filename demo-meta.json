@@ -59,7 +59,7 @@
   }, {
     "@id" : "https://opencorporates.com/id/companies/be/0308357951",
     "@type" : "rov:RegisteredOrganization",
-    "http://www.w3.org/2004/02/skos/core#altLabel" : [ {
+    "skos:altLabel" : [ {
       "@language" : "nl",
       "@value" : "FOD Kanselarij"
     }, {
@@ -154,6 +154,7 @@
     "adms" : "http://www.w3.org/ns/adms#",
     "rov" : "http://www.w3.org/ns/regorg#",
     "dcterms" : "http://purl.org/dc/terms/",
+    "skos" : "http://www.w3.org/2004/02/skos/core#",
     "vcard" : "http://www.w3.org/2001/vcard-rdf/3.0#",
     "dcat" : "http://www.w3.org/ns/dcat#"
   }

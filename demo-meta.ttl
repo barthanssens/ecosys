@@ -1,5 +1,6 @@
 @prefix adms:  <http://www.w3.org/ns/adms#> .
 @prefix rov:   <http://www.w3.org/ns/regorg#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix vcard: <http://www.w3.org/2001/vcard-rdf/3.0#> .
 @prefix dcat:  <http://www.w3.org/ns/dcat#> .
@@ -19,8 +20,7 @@
 
 <https://opencorporates.com/id/companies/be/0308357951>
         a              rov:RegisteredOrganization ;
-        <http://www.w3.org/2004/02/skos/core#altLabel>
-                "FOD Kanselarij"@nl , "SPF Chancellerie"@fr ;
+        skos:altLabel  "FOD Kanselarij"@nl , "SPF Chancellerie"@fr ;
         rov:legalName  "Federale Overheidsdienst Kanselarij van de Eerste Minister"@nl , "Service Public Fédéral Chancellerie du Premier Ministre"@fr .
 
 <http://data.fedict.be/contact/helpdesk>
