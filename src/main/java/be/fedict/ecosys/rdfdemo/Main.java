@@ -7,6 +7,7 @@ package be.fedict.ecosys.rdfdemo;
 
 import be.fedict.ecosys.rdfdemo.vocab.ADMS;
 import be.fedict.ecosys.rdfdemo.vocab.DCAT;
+import be.fedict.ecosys.rdfdemo.vocab.REGORG;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -23,6 +24,7 @@ import org.apache.jena.sparql.vocabulary.FOAF;
 import org.apache.jena.vocabulary.DCTerms;
 import org.apache.jena.vocabulary.DCTypes;
 import org.apache.jena.vocabulary.RDF;
+import org.apache.jena.vocabulary.SKOS;
 import org.apache.jena.vocabulary.VCARD;
 
 
@@ -60,6 +62,7 @@ public class Main {
         m.setNsPrefix("dcat", DCAT.getURI());
         m.setNsPrefix("dcterms", DCTerms.getURI());
         //m.setNsPrefix("oh", OH.getURI());
+        m.setNsPrefix("rov", REGORG.getURI());
         m.setNsPrefix("vcard", VCARD.getURI());
         
         // Note: All output formats represent exactly the same RDF info
@@ -118,7 +121,8 @@ public class Main {
             .addProperty(DCTerms.created, "2012-10-14", XSDDatatype.XSDdate)
             .addProperty(DCTerms.modified, "2015-11-19", XSDDatatype.XSDdate)
             .addProperty(DCTerms.type, DCTypes.InteractiveResource)
-            .addProperty(DCTerms.publisher, fedict)
+            .addProperty(DCTerms.publisher, primem)
+            .addProperty(DCTerms.subject, envi)
             .addProperty(DCTerms.spatial, belgium)
             .addProperty(DCTerms.language, dutch)
             .addProperty(DCTerms.language, french)
@@ -133,6 +137,13 @@ public class Main {
             .addProperty(FOAF.page, PORTAL + "/form/environnement/fr/")
             .addProperty(DCTerms.language, french);
         
+        // Add some info on the publisher
+        primem.addProperty(RDF.type, REGORG.regOrg)
+            .addProperty(REGORG.legalName, "Service Public Fédéral Chancellerie du Premier Ministre", "fr")
+            .addProperty(SKOS.altLabel, "SPF Chancellerie", "fr")    
+            .addProperty(REGORG.legalName, "Federale Overheidsdienst Kanselarij van de Eerste Minister", "nl")
+            .addProperty(SKOS.altLabel, "FOD Kanselarij", "nl");    
+        
         // Define the helpdesk contact
         // Note: a contact of an organization is not the organization itself
         Resource tech = m.createResource(ID_FEDICT + "/contact/helpdesk");
@@ -144,7 +155,6 @@ public class Main {
             .addProperty(VCARD.ROLE, "Technical")
             .addProperty(VCARD.TEL, teltech)
             .addProperty(VCARD.EMAIL, mailtech)
-            .addProperty(DCTerms.subject, envi)
             .addProperty(DCTerms.language, dutch);
         form.addProperty(DCAT.contactPoint, tech);
         
